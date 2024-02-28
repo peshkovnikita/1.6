@@ -2,8 +2,7 @@
 @media (min-width: 0px) and (max-width: 767px) {
   .menu-right .menu__item:nth-child(-n+3),
   .menu-left li:nth-of-type(2),
-  .text-info__paragraph p:nth-of-type(2),
-  .text-info__paragraph p:nth-of-type(3) {
+  .text-info__paragraph p:last-child {
     display: none;
   }
 
@@ -17,11 +16,7 @@
 }
 
 /* от 768px */
-@media (min-width: 768px) {
-  .text-info__paragraph span:nth-of-type(2){
-    display: none;
-  }
-
+@media (min-width: $tablet) {
   .menu-left {
     padding-left: 24px;
   }
@@ -64,17 +59,17 @@
     margin-top: 32px;
   }
 
-  .image-block {
-    height: 208px;
-  }
-
   .container__text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
+
   .text-info__paragraph p {
     margin-right: 48px;
+  }
+
+  .text-info__paragraph p span:last-child {
+    display: none;
   }
 
   .text-info__read-more {
@@ -95,13 +90,26 @@
     line-height: 20px;
   }
 
+  .image-block {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .image-block img {
     border-radius: 12px;
   }
 }
 
-/* от 1120px */
-@media (min-width: 1120px) {
+
+/* от 1440px */
+@media (min-width: $desktop-wide) {
+  body {
+    display: grid;
+    grid-template-areas: "sidebar main"
+                         "sidebar footer";
+  }
+
+  /* Main */
   .header,
   .blurred {
     display: none;
@@ -137,10 +145,6 @@
     height: 40px;
   }
 
-  .heading {
-    display: inline-block;
-  }
-
   .text-info__title {
     display: flex;
     justify-content: space-between;
@@ -168,10 +172,6 @@
     margin: 0;
   }
 
-  .image__section {
-    margin: 0 32px;
-  }
-
   .heading::before {
     left: -32px;
     height: 40px;
@@ -197,11 +197,41 @@
     padding-top: 11px;
   }
 
+  .image__section {
+    margin: 0 32px;
+  }
+
   .text-info__paragraph p {
     margin-right: 30px;
   }
 
   .text-info__read-more {
     margin: 16px 0;
+  }
+
+  /* Sidebar */
+  .side-menu {
+    position: static;
+    height: initial;
+    box-shadow: none;
+  }
+
+  .side-menu__header {
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+  }
+
+  .side-menu__wrapper {
+    justify-content: initial;
+  }
+
+  .side-menu__header .burger-icon--closed {
+    display: none;
+  }
+
+  .side-menu__footer {
+    margin-top: 10dvh;
+    margin-bottom: 0;
   }
 }

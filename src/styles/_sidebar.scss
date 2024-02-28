@@ -1,0 +1,197 @@
+.side-menu {
+  grid-area: sidebar;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  @media (min-width: $mobile-360 + 1) {
+    width: 320px;
+  }
+  height: 100vh;
+  overflow: hidden;
+  background-color: $white-color;
+  box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.20);
+  @media (max-width: $desktop-wide) {
+    z-index: 101;
+  }
+  transition: left 0.4s ease-in-out;
+}
+
+.side-menu--hidden {
+  position: absolute;
+  left: -360px;
+  box-shadow: none;
+}
+
+.side-menu__wrapper {
+  height: 100%;
+  padding: 0 16px;
+  @media (min-width: $tablet) {
+    padding: 0 24px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Side Header*/
+.side-menu__header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  column-gap: 16px;
+  width: 100%;
+  height: 87px;
+}
+
+.logo-icon {
+  height: 53px;
+  width: fit-content;
+}
+
+/* Side Navigation*/
+.side-menu__nav {
+  padding-top: 4px;
+  @media (min-width: $tablet) and (max-width: $desktop-wide - 1) {
+    margin-top: 24px;
+  }
+}
+
+.extra-services__item {
+  line-height: 24px;
+  margin-bottom: 16px;
+  @media (min-width: $tablet) {
+    margin-bottom: 20px;
+  }
+}
+
+.extra-services__item:last-child {
+  margin-bottom: 0;
+}
+
+.extra-services__link {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  font-weight: $medium;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  transition: color .25s ease-in-out;
+}
+
+.active,
+.extra-services__link:hover {
+  color: $secondary-text-color;
+}
+
+.extra-services__item .extra-services__link:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 32px;
+  left: -32px;
+  background-color: $accent-color;
+  border-radius: 4px;
+  transition: left .3s ease-in-out;
+  z-index: 101;
+}
+
+.extra-services__item a.active:before,
+.extra-services__item .extra-services__link:hover:before {
+  left: -20px;
+  @media (min-width: $tablet) {
+    left: -28px;
+  }
+}
+
+/* Footer */
+.side-menu__footer {
+  margin-bottom: 18px;
+}
+
+.side-menu__footer .footer__links {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.footer__links a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.footer__links a:last-child {
+  margin-right: 0;
+}
+
+.mail a,
+.languages a {
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.phone a{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+}
+
+.language-list {
+  display: flex;
+}
+
+.language-item {
+  height: 100%;
+  margin-right: 8px;
+}
+
+.language-item:last-child {
+  margin-right: 0;
+}
+
+.language-item a {
+  display: block;
+  height: 100%;
+}
+
+.mail a,
+.phone a,
+.languages a{
+  transition: all .25s ease-in-out;
+}
+
+.language--selected,
+.language-item a:hover,
+.phone a:hover,
+.mail a:hover {
+  color: $secondary-text-color;
+}
+
+.side-menu__footer .mail,
+.side-menu__footer .languages {
+  height: 24px;
+}
+
+.side-menu__footer .phone {
+  height: 32px;
+  margin-bottom: 14px;
+  @media (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

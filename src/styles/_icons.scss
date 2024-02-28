@@ -1,3 +1,9 @@
+.burger-icon--closed,
+.search-icon {
+  width: 40px;
+  height: 40px;
+}
+
 .burger-btn {
   background: url('../img/icons/burger.svg') no-repeat center,
               url($svg-background);
@@ -25,5 +31,15 @@
 
 .status-icon {
   background: url('../img/icons/status.svg') no-repeat center,
+              url($svg-background);
+}
+
+.burger-icon--closed {
+  background: url('../img/icons/burger-closed.svg') no-repeat center,
+              url($svg-background);
+}
+
+.search-icon {
+  background: url('../img/icons/search.svg') no-repeat center,
               url($svg-background);
 }

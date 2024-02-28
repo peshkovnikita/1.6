@@ -1,0 +1,47 @@
+footer {
+  height: 148px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  margin-top: 40px;
+
+  font-size: 14px;
+  font-weight: $medium;
+  line-height: 16px;
+  color: $footer-text-color;
+  border-top: 1px solid $decoration-color;
+
+  grid-area: footer;
+}
+
+footer p {
+  text-align: center;
+}
+
+@media (min-width: $tablet) {
+  footer {
+    height: 106px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    padding: 32px 24px;
+  }
+
+  footer p:first-child {
+    text-align: left;
+  }
+
+  footer p:last-child {
+    text-align: right;
+  }
+}
+
+@media (min-width: $desktop-wide) {
+  footer {
+    height: 86px;
+    padding: 32px 32px 21px 32px;
+  }
+
+}

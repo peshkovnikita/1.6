@@ -1,176 +1,41 @@
-.header {
-    width: 100vw;
-    position: sticky;
-    display: grid;
-    min-height: 87px;
-    background-color: $white-color;
-    border-bottom: 1px solid $light-accent-color;
-
-    .container {
-        display: flex;
-        justify-content: space-between;
-        height: 100%;
-        width: 100%;
-
-        .menu-left,
-        .menu-right {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .menu__item {
-                height: 40px;
-                width: 40px;
-
-                a {
-                    display: block;
-                    height: inherit;
-                    width: inherit;
-                }
-            }
-
-            .menu__item--divider {
-                height: 32px;
-                width: 2px;
-                background-color: $divider-color;
-                border-radius: 1px;
-                margin: 0 20px;
-            }
-        }
-
-        .menu-left {
-            padding-left: 16px;
-
-            .burger-btn {
-                width: 40px;
-                height: 40px;
-            }
-
-            .menu__logo {
-                width: 98px;
-                height: 52px;
-            }
-
-            li:first-of-type {
-                margin-left: 0;
-            }
-        }
-
-        .menu-right {
-            padding-right: 16px;
-
-            .menu__item {
-                margin-right: 16px;
-            }
-
-            li:last-of-type {
-                margin-right: 0;
-            }
-
-            .menu__item:nth-child(3) {
-                margin-right: 0;
-            }
-        }
-    }
-}
-
 .main {
     padding-top: 25px;
-
-    /* text-info */
-    .text-info__title {
-            .heading {
-                position: relative;
-                line-height: 40px;
-            }
-
-            .heading::before {
-                content: "";
-                position: absolute;
-                width: 8px;
-                height: 40px;
-                left: -16px;
-                transform: translate(-50%);
-                background-color: $accent-color;
-                border-radius: 4px;
-            }
-
-            .side__services {
-                display: none;
-            }
-        }
-
-    .text-info__slider {
-            overflow-x: scroll;
-            height: 40px;
-            min-width: 100%;
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-
-    .text-info__slider::-webkit-scrollbar {
-            display: none; /*Chrome, Safari and Opera*/
-        }
-
-    .blurred {
-            position: absolute;
-            top: 176px;
-            right: 0;
-            width: 20px;
-            height: 40px;
-            background: linear-gradient(to left,
-                    rgba(248, 248, 248, 1),
-                    rgba(248, 248, 248, 0));
-        }
-
-    /* image-section */
-    .image__section {
-        .container__text {
-            .text-info__paragraph {
-                p {
-                    font-size: 14px;
-                    letter-spacing: 0.2px;
-                    line-height: 18px;
-                }
-            }
-
-            .text-info__read-more {
-                margin: 16px 0 16px 16px;
-                height: 24px;
-
-                .read-more__button {
-                    display: flex;
-                    justify-content: center;
-                    font-weight: $medium;
-                    line-height: 24px;
-                    letter-spacing: -0.2px;
-                    height: 24px;
-
-                    .read-more__button-text {
-                        position: relative;
-                        margin: 0 8px 0 32px;
-                    }
-
-                    .read-more__button-text:before {
-                        content: '';
-                        position: absolute;
-                        width: 24px;
-                        height: 24px;
-                        left: -32px;
-                        background: url("../img/icons/expand-arrow.svg") no-repeat center;
-                    }
-                }
-            }
-        }
-
-        .image-block {
-            display: grid;
-            place-items: center;
-            block-size: auto;
-        }
-    }
+    grid-area: main;
 }
 
+.section__header {
+    padding: 16px;
+    border-top: 1px solid $decoration-color;
+    background: linear-gradient(90deg, $primary-background-color 0%, $white-color 100%);
+}
+
+.section__header h2 {
+    color: #7E7E82;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+}
+
+.side__services {
+    display: none;
+}
+
+.heading {
+    line-height: 40px;
+    position: relative;
+}
+
+.heading:before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    width: 4px;
+    height: 40px;
+    background-color: $accent-color;
+    border-radius: 0 4px 4px 0;
+}
 
 .text-info__slider,
 .image__section {
@@ -181,6 +46,18 @@
 .text-info__paragraph {
     margin-left: 16px;
     margin-right: 16px;
+}
+
+.text-info__slider {
+    overflow-x: scroll;
+    height: 40px;
+    min-width: 100%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.text-info__slider::-webkit-scrollbar {
+    display: none; /*Chrome, Safari and Opera*/
 }
 
 .services__list {
@@ -211,17 +88,311 @@
 }
 
 .link_active {
-    border-radius: 6px;
     background-color: $white-color;
-    outline: 2px solid $light-accent-color;
+    border-radius: 6px;
+    box-shadow: 0 0 0 2px $light-accent-color inset;
 }
 
+.text-info__paragraph p {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 18px;
+}
 
+.text-info__paragraph p span:last-child {
+    @media (min-width: $desktop) {
+        display: inline;
+    }
+}
 
+.text-info__read-more {
+    margin: 16px 0 16px 16px;
+    height: 24px;
+}
 
+.read-more__button {
+    display: flex;
+    justify-content: center;
+    font-weight: $medium;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    height: 24px;
+}
 
+.read-more__button-text {
+    position: relative;
+    margin-left: 32px;
+    margin-right: 8px;
+}
 
+.read-more__button-text:before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: -32px;
+    background: url("../img/icons/expand-arrow.svg") no-repeat center;
+}
 
+.image-block {
+    display: flex;
+    justify-content: center;
+}
 
+/* Brands section*/
+.brands-section {
+    position: relative;
+    margin-top: 24px;
+}
 
+.brands-section::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    width: 20px;
+    height: 72px;
+    transform: translate(0, -145%);
+    z-index: 100;
+    background: linear-gradient(to left,
+            rgba(248, 248, 248, 0.9),
+            rgba(248, 248, 248, 0));
+}
 
+/* Repair section*/
+.repair-section {
+    margin-top: 24px;
+
+    .swiper .swiper-slide {
+        height: 160px;
+        font-weight: $medium;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box
+    }
+
+    .swiper:after{
+        content: "";
+        position: absolute;
+        top: 17px;
+        right: 0;
+        width: 24px;
+        height: 160px;
+        z-index: 100;
+        background: linear-gradient(to left,
+                rgba(248, 248, 248, 1),
+                rgba(248, 248, 248, 0));
+    }
+
+    .swiper .brand-link {
+        align-self: flex-end;
+    }
+}
+
+/* Price section*/
+.price-section {
+    margin-top: 24px;
+
+    .swiper  .swiper-slide__header {
+        display: none!important;
+    }
+
+    .swiper .swiper-slide {
+        width: 260px;
+        height: 200px;
+        font-size: 14px;
+        font-weight: $medium;
+        padding: 16px;
+        display: grid;
+        box-sizing: border-box;
+        grid-template-areas: "repair-service repair-service"
+                             "repair-price repair-price"
+                             "repair-term button";
+
+        span {
+            color: $secondary-text-color;
+            line-height: 16px;
+        }
+
+        p {
+            margin-top: 4px;
+            font-weight: $regular;
+            line-height: 18px;
+            letter-spacing: 0.2px;
+        }
+
+        .repair-service {
+            align-self: start;
+            grid-area: repair-service;
+        }
+
+        .repair-price {
+            align-self: center;
+            grid-area: repair-price;
+        }
+
+        .repair-term {
+            align-self: end;
+            grid-area: repair-term;
+        }
+
+        button {
+            place-self: end;
+            grid-area: button;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 119px;
+            height: 32px;
+            padding: 0 14px;
+            font-weight: $bold;
+            font-size: 12px;
+            text-transform: uppercase;
+
+            background-color: $primary-color;
+            border-radius: 16px;
+            transition: filter 0.2s linear;
+            span {
+                color: $white-color;
+                line-height: 24px;
+                letter-spacing: -0.15px;
+            }
+            .submit-icon {
+                background: url("../img/icons/submit-arrow.svg") no-repeat center;
+                width: 8px;
+                height: 24px;
+            }
+        }
+
+        button:hover {filter: drop-shadow(0 0 2px #da3568);}
+    }
+
+    .price-section__info {
+        position: relative;
+        width: 288px;
+        margin-top: 14px;
+        padding: 0 16px;
+
+        p {
+            font-size: 14px;
+            margin-bottom: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+        }
+
+        a {
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            font-weight: $medium;
+            transition: color 0.3s ease;
+            span {
+                display: inline-block;
+                margin-left: 8px;
+                width: 7px;
+                height: 12px;
+                background: url("../img/icons/pink-arrow.svg") no-repeat center;
+            }
+        }
+
+        a:hover {
+            color: $secondary-text-color;
+        }
+
+        @media (min-width: $tablet) {
+            width: 465px;
+        }
+
+    }
+
+    @media (min-width: $tablet) {
+        .swiper .swiper-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            height: initial;
+        }
+
+        .swiper .swiper-slide__header {
+            height: 40px!important;
+            padding-top: 0;
+            background-color: transparent;
+        }
+
+        .swiper .swiper-slide,
+        .swiper .swiper-wrapper .swiper-slide__header {
+            position: relative;
+            display: grid!important;
+            grid-template-areas: "repair-service repair-price repair-term button";
+            grid-template-columns: 54% 15% 16% 15%;
+        }
+
+        .swiper .swiper-slide {
+            width: 100%;
+            height: 65px;
+            outline: none;
+            border-radius: 0;
+
+            .repair-service,
+            .repair-price,
+            .repair-term,
+            button {
+                align-self: center;
+            }
+
+            span:not(button span, .swiper-slide__header span) {
+                display: none;
+            }
+        }
+
+        .swiper .swiper-slide:first-child {
+            border-top-left-radius: 6px 6px;
+            border-top-right-radius: 6px 6px;
+        }
+
+        .swiper .swiper-slide:last-child {
+            border-bottom-left-radius: 6px 6px;
+            border-bottom-right-radius: 6px 6px;
+        }
+
+        .swiper .swiper-slide:not(.swiper-slide__header, .swiper-slide:last-child):after {
+            content: "";
+            position: absolute;
+            top: 64px;
+            left: 16px;
+            width: calc(100% - 32px);
+            height: 1px;
+            background-color: $divider-color;
+        }
+
+        .price-section__info {
+            margin-top: 24px;
+            padding: 0 24px;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        .price-section__info {
+            padding-left: 24px;
+        }
+    }
+
+    @media (min-width: $desktop-wide) {
+        .swiper .swiper-slide {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .swiper .swiper-slide:not(.swiper-slide__header, .swiper-slide:last-child):after {
+            left: 24px;
+            width: calc(100% - 48px);
+
+        }
+
+        .price-section__info {
+            padding-left: 32px;
+        }
+    }
+}

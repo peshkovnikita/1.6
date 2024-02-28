@@ -1,0 +1,130 @@
+.call-modal,
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  right: -440px;
+  width: 321px;
+  @media (min-width: $desktop) {
+    width: 440px;
+  }
+  height: 100vh;
+  overflow: hidden;
+  border-left: 1px solid $decoration-color;
+  background-color: $white-color;
+  z-index: 201;
+
+  h2 {
+    position: relative;
+    line-height: 40px;
+    margin-bottom: 24px;
+  }
+
+  h2:before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    width: 4px;
+    height: 40px;
+    background-color: $accent-color;
+    border-radius: 0 4px 4px 0;
+    @media (min-width: $desktop) {
+      left: -30px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+      p {
+        padding: 16px 16px 16px 0;
+        font-size: 14px;
+        font-weight: $medium;
+        color: $secondary-text-color;
+        line-height: 16px;
+          a {
+            color: $primary-color;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+      }
+
+      label > input, textarea {
+        width: 100%;
+        color: $bullets-color;
+        margin-top: 14px;
+        padding: 0 16px;
+        height: 48px;
+        border: 1px solid $divider-color;
+        border-radius: 8px;
+        cursor: text;
+      }
+
+      label:first-child > input {
+        margin-top: 0;
+      }
+
+      textarea {
+        height: 118px;
+        padding: 16px;
+      }
+  }
+}
+
+.modal--opened{
+  right: 0;
+
+  [type="button"] {
+    margin-top: 24px;
+    margin-left: 14px;
+    @media (min-width: $desktop) {
+      position: fixed;
+      margin: 0;
+      top: 32px;
+      right: 472px;
+    }
+  }
+}
+
+.modal-wrapper {
+  padding: 24px 16px;
+
+  [type="submit"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    width: 136px;
+    height: 32px;
+    padding: 0 18px;
+
+    font-weight: $bold;
+    font-size: 12px;
+    color: $white-color;
+    text-transform: uppercase;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    background-color: $primary-color;
+    border-radius: 16px;
+
+    transition: filter 0.2s linear;
+
+    .submit-icon {
+      background: url("../img/icons/submit-arrow.svg") no-repeat center;
+      width: 8px;
+      height: 24px;
+    }
+  }
+
+  [type="submit"]:hover {
+    filter: drop-shadow(0 0 2px #da3568);
+  }
+
+  @media (min-width: $desktop) {
+    padding: 30px;
+  }
+
+}
+
+
