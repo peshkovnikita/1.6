@@ -4,6 +4,7 @@ import './index.scss'
 import { showSidebar, closeSidebar } from './modules/sidebar'
 import { showCallModal, showFeedbackModal, closeCallModal, closeFeedbackModal } from './modules/modal'
 import { swiper } from './modules/swiper'
+import { showBrands, showRepairServices, showInfoText } from './modules/show-more'
 
 // Sidebar
 const menuSidebar = document.querySelector('.side-menu')
@@ -35,26 +36,30 @@ closeCallModal(callModal, closeCallModalButton, modalOpened, overlayModal, overl
 showFeedbackModal(feedbackModal, openFeedbackModal, openFeedbackModalDesk, modalOpened, overlayModal, overlayVisible)
 closeFeedbackModal(feedbackModal, closeFeedbackModalButton, modalOpened, overlayModal, overlayVisible)
 
-//<button class="header__menu-button button" name="menu" title="Открыть меню">
-//<button class="sidebar-menu__close-button button" name="close" title="Закрыть меню">
+// Show more buttons
+const infoButtonText = document.getElementById('info--read-more-txt')
+const infoArrow = document.getElementById('info--read-more-img')
+const infoParagraph = document.querySelector('.text-info__second-paragraph')
+const infoButton = document.querySelector('.info__read-more-btn')
+let isHiddenInfo = true;
+const screenWidth = document.documentElement.clientWidth
 
-// const text = document.getElementById('text');
-// const arrow = document.getElementById('arrowImg');
-// const brandsContainer = document.getElementById('swiper-wrapper');
-// let isHidden = true;
-//
-// function expandAndHide() {
-//     if (isHidden === true) {
-//         text.innerHTML = 'Скрыть';
-//         arrow.classList.add('rotateImg');
-//         brandsContainer.classList.add('brands--expand');
-//         isHidden = false;
-//     } else {
-//         text.innerHTML = 'Показать все';
-//         arrow.classList.remove('rotateImg');
-//         brandsContainer.classList.remove('brands--expand');
-//         isHidden = true;
-//     }
-// }
+showInfoText(infoButton, infoParagraph, infoArrow, infoButtonText, isHiddenInfo, screenWidth)
+
+const brandText = document.getElementById('brand--show-more-txt')
+const brandArrow = document.getElementById('brand--show-more-img')
+const brandContainer = document.querySelector('.brand-wrapper')
+const brandButton = document.querySelector('.brand__show-more-btn')
+let isHiddenBrand = true;
+
+showBrands(brandButton, brandText, brandArrow, brandContainer, isHiddenBrand)
+
+const repairText = document.getElementById('repair--show-more-txt')
+const repairArrow = document.getElementById('repair--show-more-img')
+const repairContainer = document.querySelector('.repair-wrapper')
+const repairButton = document.querySelector('.repair__show-more-btn')
+let isHiddenRepair = true;
+
+showRepairServices(repairButton, repairText, repairArrow, repairContainer, isHiddenRepair)
 
 

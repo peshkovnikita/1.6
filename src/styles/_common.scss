@@ -97,7 +97,7 @@ button, input[type="submit"], input[type="reset"] {
           rgba(248, 248, 248, 0));
 }
 
-.show-more .btn-img {
+.btn-img {
   width: 24px;
   height: 24px;
   background: url('../img/icons/expand-arrow.svg') center no-repeat;
@@ -105,6 +105,31 @@ button, input[type="submit"], input[type="reset"] {
 
 .show-more {
   display: none;
+}
+
+.show-more__btn--img-rotated {
+  transform: rotate(180deg);
+}
+
+.info__read-more-btn {
+  height: 24px;
+  display: flex;
+  justify-content: center;
+
+  font-family: inherit;
+  font-weight: $medium;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  transition: all 0.3s ease;
+}
+
+.info__read-more-btn span:last-child {
+  line-height: 24px;
+  margin: 0 8px;
+}
+
+.info__read-more-btn span:first-child {
+  transition: transform 0.3s ease;
 }
 
 .icon {

@@ -99,9 +99,10 @@
     line-height: 18px;
 }
 
-.text-info__paragraph p span:last-child {
+.text-info__second-paragraph{
+    display: none;
     @media (min-width: $desktop) {
-        display: inline;
+        display: block;
     }
 }
 
@@ -196,6 +197,22 @@
 
     .swiper  .swiper-slide__header {
         display: none!important;
+    }
+
+    .swiper:after{
+        content: "";
+        position: absolute;
+        top: 17px;
+        right: 0;
+        width: 12px;
+        height: 200px;
+        z-index: 100;
+        background: linear-gradient(to left,
+                rgba(248, 248, 248, 1),
+                rgba(248, 248, 248, 0));
+        @media (min-width: $tablet) {
+            display: none;
+        }
     }
 
     .swiper .swiper-slide {

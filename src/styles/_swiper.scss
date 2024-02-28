@@ -85,10 +85,6 @@
     .swiper .swiper-wrapper {
         gap: 16px 24px;
     }
-
-    .brands--expand {
-        height: 336px !important;
-    }
 }
 
 @media (min-width: $tablet) {
@@ -149,11 +145,18 @@
     }
 
     .show-more__btn span:first-child {
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease;
     }
 
     .show-more__btn--img-rotated {
         transform: rotate(180deg);
+    }
+
+    .brands--expand {
+        height: 248px !important;
+    }
+    .repair--expand {
+        height: 340px !important;
     }
 }
 
@@ -162,11 +165,7 @@
         grid-template-columns: 240px 240px 240px 240px;
         gap: 16px 32px;
     }
-
-    .brands--expand {
-        height: 248px !important;
-    }
-
+    
     section .swiper {
         padding: 0 24px;
     }
@@ -184,7 +183,6 @@
     section .swiper {
         padding: 0 32px;
     }
-
 }
 
 

@@ -1,8 +1,7 @@
 /* до 768px */
 @media (min-width: 0px) and (max-width: 767px) {
   .menu-right .menu__item:nth-child(-n+3),
-  .menu-left li:nth-of-type(2),
-  .text-info__paragraph p:last-child {
+  .menu-left li:nth-of-type(2), {
     display: none;
   }
 
