@@ -18,6 +18,15 @@ body {
   position: relative;
 }
 
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.thumb {
+  display: none;
+}
+
 h1 {
   font-size: 28px;
   letter-spacing: -0.6px;

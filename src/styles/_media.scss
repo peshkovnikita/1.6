@@ -1,3 +1,4 @@
+
 /* до 768px */
 @media (min-width: 0px) and (max-width: 767px) {
   .menu-right .menu__item:nth-child(-n+3),
@@ -99,15 +100,8 @@
   }
 }
 
-
 /* от 1440px */
 @media (min-width: $desktop-wide) {
-  body {
-    display: grid;
-    grid-template-areas: "sidebar main"
-                         "sidebar footer";
-  }
-
   /* Main */
   .header,
   .blurred {
@@ -115,7 +109,28 @@
   }
 
   .main {
+    display: grid;
+    grid-template-areas: "thumb section-wrapper"
+                          "thumb footer";
+    max-width: 1440px;
     padding-top: 43px;
+    margin: 0 auto;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .section-wrapper {
+    grid-area: section-wrapper;
+  }
+
+  .thumb {
+    display: block;
+    width: 320px;
+    height: 100%;
+
+    grid-area: thumb;
   }
 
   .side__services {
@@ -210,9 +225,11 @@
 
   /* Sidebar */
   .side-menu {
-    position: static;
-    height: initial;
+    position: fixed;
+    left: calc($sidebar-gap / 2);
+    height: 100vh;
     box-shadow: none;
+    z-index: 100;
   }
 
   .side-menu__header {
@@ -221,16 +238,13 @@
     height: 110px;
   }
 
-  .side-menu__wrapper {
-    justify-content: initial;
-  }
+
 
   .side-menu__header .burger-icon--closed {
     display: none;
   }
 
   .side-menu__footer {
-    margin-top: 10dvh;
-    margin-bottom: 0;
+    margin-bottom: 18px;
   }
 }
